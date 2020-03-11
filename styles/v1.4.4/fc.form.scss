@@ -1,0 +1,169 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-25 22:32:15
+ * @Description: form styles for fc
+ * @Modification：
+ *      [2019-03-06] 更改具体尺寸，由原来的 375px 屏幕标准更改为 750px;
+ *      [2019-03-06] 更改组件命名方式，使其更贴合 BEM 规范;
+ */
+
+@import 'utils';
+
+$namespace: 'fc' !default;
+
+$form_padding_vertical: .15rem * $rate2width750 !default;
+
+$form_background_color: #FFFFFF !default;
+$form_border_bottom_color: #EEEEEE !default;
+
+$form_item_height: .44rem * $rate2width750 !default;
+$form_item_label_width: .8rem * $rate2width750 !default;
+$form_item_label_height: .44rem * $rate2width750 !default;
+$form_item_content_width: 2.65rem * $rate2width750 !default;
+
+$form_item_font_size: .14rem * $rate2width750 !default;
+$form_item_icon_size: .16rem * $rate2width750 !default;
+$form_item_label_font_size: .14rem * $rate2width750 !default;
+
+$form_item_font_color: #333333 !default;
+$form_item_label_font_color: #333333 !default;
+$form_item_icon_clear_color: #DDDDDD !default;
+$form_item_placeholder_color: #7D7575 !default;
+$form_item_border_bottom_color: #EEEEEE !default;
+$form_item_font_disable_or_readonly_color: #999999 !default;
+
+$form_item_clear_icon: '\e6bf';
+
+/* form styles */
+.#{$namespace}-form__container {
+    padding-left: $form_padding_vertical;
+    background-color: $form_background_color;
+    border-bottom: solid 1px $form_border_bottom_color;
+}
+
+.#{$namespace}-interaction__group {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    position: relative;
+    padding-right: $form_padding_vertical;
+    padding-left: $form_item_label_width;
+    border-bottom: solid 1px $form_item_border_bottom_color;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    & .#{$namespace}-group__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $form_item_label_width;
+        height: $form_item_label_height;
+        line-height: $form_item_label_height;
+        color: $form_item_label_font_color;
+        font-size: $form_item_label_font_size;
+        font-weight: normal;
+    }
+
+    /* form item styles */
+    & .#{$namespace}-group__item {
+        position: relative;
+        width: $form_item_content_width;
+        height: $form_item_height;
+        line-height: $form_item_height;
+
+        & .#{$namespace}-form--input--text {
+            display: none;
+        }
+
+        & input, & select, & textarea {
+            width: 100%;
+            height: $form_item_height;
+            border: none;
+            outline: none;
+            color: $form_item_font_color;
+            font-size: $form_item_font_size;
+            vertical-align: top;
+
+            &[disabled], &[readonly] {
+                color: $form_item_font_disable_or_readonly_color;
+            }
+        }
+
+        &.#{$namespace}-group__item--selector,
+        &.#{$namespace}-group__item--date,
+        &.#{$namespace}-group__item--clear {
+            & .#{$namespace}-group__item__text {
+                display: block;
+                width: $form_item_content_width;
+                height: 100%;
+                overflow: hidden;
+                line-height: inherit;
+                color: $form_item_font_color;
+                font-size: $form_item_font_size;
+                vertical-align: middle;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            & .#{$namespace}-group__item__text--null {
+                color: $form_item_placeholder_color;
+            }
+        }
+
+        &.#{$namespace}-group__item--selector select,
+        &.#{$namespace}-group__item--date input[type=date],
+        &.#{$namespace}-group__item--date input[type=month] {
+            position: absolute;
+            top: 10%;
+            left: 0;
+            right: 0;
+            bottom: 10%;
+            width: 100%;
+            height: 80%;
+            z-index: 2;
+            opacity: 0;
+            @include tapNoHighLight();
+
+            &:active,
+            &:hover {
+                @include tapNoHighLight();
+            }
+        }
+
+        &.#{$namespace}-group__item--clear {
+            padding-right: $form_item_icon_size * 2;
+
+            & .#{$namespace}-group__item__text {
+                width: $form_item_content_width - ($form_item_icon_size * 2);
+            }
+
+            & .#{$namespace}-group__item__clear {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 2;
+                width: $form_item_icon_size * 2;
+                height: $form_item_height;
+                text-align: right;
+                @include tapNoHighLight();
+
+                &:active,
+                &:hover {
+                    opacity: .7;
+                    @include tapNoHighLight();
+                }
+
+                &:before {
+                    display: block;
+                    content: $form_item_clear_icon;
+                    line-height: inherit;
+                    color: $form_item_icon_clear_color;
+                    font-family: iconfont, serif;
+                    font-size: $form_item_icon_size;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+}

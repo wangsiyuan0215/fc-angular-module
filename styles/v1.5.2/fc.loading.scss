@@ -1,0 +1,116 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-26 09:19:39
+ * @Description: loading styles for fc
+ */
+@import 'utils';
+
+$namespace: 'fc' !default;
+
+$loading-box-width: 42px;
+$loading-box-height: 20px;
+$loading-box-margin: -10px 0 0 -21px;
+
+$loading-item-width: 12px;
+$loading-item-height: 12px;
+
+$loading-item-left-color: #FF3333;
+$loading-item-right-color: #2B81EB;
+
+$loading-box-font-color: #999999;
+
+.#{$namespace}-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2001;
+}
+
+.#{$namespace}-loading-container,
+.#{$namespace}-loading--container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    z-index: 200;
+    background-color: rgba(255, 255, 255, .6);
+    text-align: center;
+}
+
+.#{$namespace}-loading-box,
+.#{$namespace}-loading--box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: $loading-box-margin;
+    width: $loading-box-width;
+    height: $loading-box-height;
+    line-height: $loading-box-height;
+    color: $loading-box-font-color;
+    text-align: center;
+}
+
+.#{$namespace}-loading-item,
+.#{$namespace}-loading--item {
+    display: inline-block;
+    position: absolute;
+    top: ($loading-box-height - $loading-item-height) / 2;
+    left: 0;
+    width: $loading-item-width;
+    height: $loading-item-height;
+    border-radius: 100%;
+    background-color: $loading-item-left-color;
+    transform: translateX(0);
+    animation: load 1.04s linear infinite;
+
+    &:nth-child(2) {
+        transform: translateX(30px);
+        opacity: .5;
+        background-color: $loading-item-right-color;
+        animation: load2 1.04s linear infinite;
+    }
+}
+
+@keyframes load {
+     0%{
+         opacity: 0.8;
+         transform: translateX(0) scale(1);
+     }
+     25% {
+         transform: translateX(15px) scale(1.5);
+     }
+     50%{
+         opacity: 0.8;
+         transform: translateX(30px) scale(1);
+     }
+     75% {
+         transform: translateX(15px) scale(0.5);
+     }
+     100%{
+         opacity: 0.5;
+         transform: translateX(0) scale(1);
+     }
+ }
+@keyframes load2 {
+    0%{
+        transform: translateX(30px) scale(1);
+    }
+    25% {
+        transform: translateX(15px) scale(0.5);
+    }
+    50%{
+        opacity: 0.5;
+        transform: translateX(0) scale(1);
+    }
+    75% {
+        opacity: 0.8;
+        transform: translateX(15px) scale(1.5);
+    }
+    100%{
+        opacity: .5;
+        transform: translateX(30px) scale(1);
+    }
+}

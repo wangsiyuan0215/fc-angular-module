@@ -1,0 +1,122 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2019-01-17 16:20:51
+ * @Description: _address-selector
+ */
+$namespace: 'fc-as-';
+
+$tab_header_padding_left: 0.3rem;
+$tab_header_padding_vertical: 0.2rem;
+$tab_item_width: 1.5rem;
+$tab_item_height: 0.42rem;
+$tab_item_font_size: 0.3rem;
+
+$panel_item_margin_bottom: 0.4rem;
+
+.#{$namespace}tabs {
+    box-sizing: content-box;
+    position: relative;
+    height: $tab_item_height;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: $tab_header_padding_vertical 0 $tab_header_padding_vertical 0;
+    font-size: 0;
+    line-height: 0;
+    word-spacing: 0;
+    letter-spacing: -4px;
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-bottom: solid 1px #e4e5e8;
+        content: ' ';
+    }
+
+    .tabs--item {
+        display: inline-block;
+        vertical-align: top;
+        //width: $tab_item_width;
+        height: $tab_item_height;
+        margin: 0 0.4rem 0 0;
+        background-color: #fff;
+        line-height: $tab_item_height;
+        color: #3e3e3e;
+        font-size: $tab_item_font_size;
+        letter-spacing: 0;
+        text-align: left;
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+    .tabs--last {
+        margin: 0 !important;
+        opacity: 1;
+        color: #ef4343;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    .tab--line {
+        position: absolute;
+        bottom: 0;
+        z-index: 15;
+        width: $tab_item-width;
+        height: 1px;
+        background-color: #ef4343;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+}
+.#{$namespace}panels {
+    margin-left: -$tab_header_padding_left;
+
+    .panel--inner {
+        box-sizing: border-box;
+        width: 100%;
+        height: 5.77rem;
+        overflow: hidden;
+        font-size: 0;
+        letter-spacing: -4px;
+        transition: transform 0.2s linear;
+
+        .panel--item {
+            box-sizing: border-box;
+            display: inline-block;
+            height: 100%;
+            overflow: hidden;
+            padding-left: $tab_header_padding_left;
+            vertical-align: top;
+        }
+
+        .panel--itemInner {
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .panel--itemInner > ul {
+            height: auto;
+            padding: $tab_header_padding_left 0 $tab_header_padding_left 0;
+            list-style: none;
+        }
+
+        .panel--itemInner li {
+            margin-bottom: $panel_item_margin_bottom;
+            line-height: $tab_item_height;
+            color: #3e3e3e;
+            font-size: $tab_item_font_size;
+            letter-spacing: 1px;
+        }
+        .panel--itemInner li.checked {
+            color: #ef4343;
+        }
+    }
+}

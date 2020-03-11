@@ -1,0 +1,95 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2019-01-17 16:20:51
+ * @Description: _address-selector
+ */
+.fc-as-tabs {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  position: relative;
+  height: 0.42rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2rem 0 0.2rem 0;
+  font-size: 0;
+  line-height: 0;
+  word-spacing: 0;
+  letter-spacing: -4px; }
+  .fc-as-tabs::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: solid 1px #e4e5e8;
+    content: ' '; }
+  .fc-as-tabs .tabs--item {
+    display: inline-block;
+    vertical-align: top;
+    height: 0.42rem;
+    margin: 0 0.4rem 0 0;
+    background-color: #fff;
+    line-height: 0.42rem;
+    color: #3e3e3e;
+    font-size: 0.3rem;
+    letter-spacing: 0;
+    text-align: left; }
+    .fc-as-tabs .tabs--item:active {
+      opacity: 0.7; }
+  .fc-as-tabs .tabs--last {
+    margin: 0 !important;
+    opacity: 1;
+    color: #ef4343;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+  .fc-as-tabs .tab--line {
+    position: absolute;
+    bottom: 0;
+    z-index: 15;
+    width: 1.5rem;
+    height: 1px;
+    background-color: #ef4343;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+
+.fc-as-panels {
+  margin-left: -0.3rem; }
+  .fc-as-panels .panel--inner {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 5.77rem;
+    overflow: hidden;
+    font-size: 0;
+    letter-spacing: -4px;
+    -webkit-transition: -webkit-transform 0.2s linear;
+    transition: -webkit-transform 0.2s linear;
+    transition: transform 0.2s linear;
+    transition: transform 0.2s linear, -webkit-transform 0.2s linear; }
+    .fc-as-panels .panel--inner .panel--item {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: inline-block;
+      height: 100%;
+      overflow: hidden;
+      padding-left: 0.3rem;
+      vertical-align: top; }
+    .fc-as-panels .panel--inner .panel--itemInner {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch; }
+    .fc-as-panels .panel--inner .panel--itemInner > ul {
+      height: auto;
+      padding: 0.3rem 0 0.3rem 0;
+      list-style: none; }
+    .fc-as-panels .panel--inner .panel--itemInner li {
+      margin-bottom: 0.4rem;
+      line-height: 0.42rem;
+      color: #3e3e3e;
+      font-size: 0.3rem;
+      letter-spacing: 1px; }
+    .fc-as-panels .panel--inner .panel--itemInner li.checked {
+      color: #ef4343; }
+
+/*# sourceMappingURL=fc.as.css.map */

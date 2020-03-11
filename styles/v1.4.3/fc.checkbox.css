@@ -1,0 +1,72 @@
+.fc-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+  .fc-checkbox:active {
+    opacity: 0.7; }
+  .fc-checkbox.checked > .fc-checkbox__indicator {
+    background-color: #3782FF; }
+    .fc-checkbox.checked > .fc-checkbox__indicator > .icon {
+      color: #fff;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1; }
+  .fc-checkbox .fc-checkbox__indicator {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.24rem;
+    overflow: hidden;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    .fc-checkbox .fc-checkbox__indicator > .icon {
+      width: 1em;
+      height: 1em;
+      overflow: hidden;
+      vertical-align: -0.15em;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      fill: currentColor;
+      color: transparent;
+      font-size: 0.22rem;
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+      opacity: 0;
+      -webkit-transition: all 0.2s cubic-bezier(0.82, 0, 0.37, 1.8);
+      transition: all 0.2s cubic-bezier(0.82, 0, 0.37, 1.8); }
+  .fc-checkbox .fc-checkbox__content {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1; }
+
+/*# sourceMappingURL=fc.checkbox.css.map */

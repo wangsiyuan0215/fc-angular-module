@@ -1,0 +1,40 @@
+/*
+ * @Author: siyuan.wang
+ * @Date: 2019-01-18 10:55:18
+ * @Last Modified by: siyuan.wang
+ * @Last Modified time: 2019-01-18 11:17:03
+ */
+
+$namespace: '';
+
+.#{$namespace}switch--container {
+    display: inline-block;
+    position: relative;
+    width: 46px;
+    height: 22px;
+    border: solid 1px #AAAAAA;
+    border-radius: 12px;
+    background-color: #fff;
+    vertical-align: top;
+    transition: border-color .1s linear, background-color .1s linear;
+
+    & .#{$namespace}switch--item {
+        width: 16px;
+        height: 16px;
+        margin: 2px 0 0 2px;
+        border-radius: 50%;
+        background-color: #aaaaaa;
+        transition: transform .2s linear, background-color .2s ease-in;
+        transform: translateX(0);
+    }
+
+    &.#{$namespace}switch__checked {
+        border-color: #4178fb;
+        background-color: #4178fb;
+
+        & .#{$namespace}switch--item {
+            background-color: #fff;
+            transform: translateX(24px);
+        }
+    }
+}

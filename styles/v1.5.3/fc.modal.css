@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-26 09:31:43
+ * @Description: modal styles for fc
+ */
+/**
+    <div class="fc-modal">
+        <div class="fc-modal--box">
+            <div class="fc-modal--header">
+                ...
+            </div>
+            <div class="fc-modal--body">
+                ...
+            </div>
+            <div class="fc-modal--footer">
+                <div class="fc-modal--footer--btn fc-modal--footer--btn__cancel">取消</div>
+                <div class="fc-modal--footer--btn fc-modal--footer--btn__submit">确定</div>
+            </div>
+        </div>
+        <div class="fc-modal--bg"></div>
+    </div>
+ */
+/* avoid displaying content for fc-modal before fc.min.js is just loaded. */
+fc-modal {
+  display: none !important; }
+
+.fc-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  height: 100%;
+  overflow-y: auto; }
+  .fc-modal.fc-modal__active {
+    display: block; }
+    .fc-modal.fc-modal__active .fc-modal--box__active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 10%, 0);
+              transform: translate3d(0, 10%, 0); }
+  .fc-modal .fc-modal--box {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 0; }
+    .fc-modal .fc-modal--box .fc-modal--header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      height: 0.5rem;
+      background-color: #FFFFFF;
+      border-bottom: solid 1px #F5F5F5;
+      line-height: 0.5rem;
+      color: #333333;
+      font-size: 0.16rem;
+      text-align: center; }
+    .fc-modal .fc-modal--box .fc-modal--body {
+      position: relative;
+      height: 100%;
+      padding: 0.5rem 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch; }
+      @media screen and (max-height: 560px) {
+        .fc-modal .fc-modal--box .fc-modal--body {
+          max-height: 4rem; } }
+    .fc-modal .fc-modal--box .fc-modal--footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      height: 0.5rem;
+      border-top: solid 1px #F5F5F5;
+      background-color: #FFFFFF;
+      line-height: 0.5rem;
+      font-size: 0;
+      letter-spacing: -4px;
+      word-spacing: 0; }
+      .fc-modal .fc-modal--box .fc-modal--footer .fc-modal--footer--btn {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        height: 0.3rem;
+        line-height: 0.3rem;
+        margin-top: .1rem;
+        color: #333333;
+        font-size: 0.16rem;
+        letter-spacing: 0;
+        text-align: center; }
+        .fc-modal .fc-modal--box .fc-modal--footer .fc-modal--footer--btn:last-child {
+          border-left: solid 1px #F5F5F5; }
+        .fc-modal .fc-modal--box .fc-modal--footer .fc-modal--footer--btn:active {
+          opacity: .7; }
+      .fc-modal .fc-modal--box .fc-modal--footer .fc-modal--footer--btn__cancel {
+        color: #999999; }
+      .fc-modal .fc-modal--box .fc-modal--footer .fc-modal--footer--btn__submit {
+        color: #007AFF; }
+  .fc-modal .fc-modal--bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.6); }
+
+.fc-modal-in-body__show {
+  overflow: hidden; }
+
+/*# sourceMappingURL=fc.modal.css.map */

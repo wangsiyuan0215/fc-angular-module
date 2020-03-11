@@ -1,0 +1,67 @@
+{
+  "name": "fc-angular-moduel",
+  "version": "2.0.1",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "9.3.1",
+    "chalk": "2.4.1",
+    "css-mqpacker": "7.0.0",
+    "del": "^5.1.0",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "4.2.0",
+    "eslint-plugin-angular": "4.0.1",
+    "gulp": "4.0.2",
+    "gulp-clean-css": "4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^2.0.9",
+    "gulp-iife": "^0.4.0",
+    "gulp-notify": "3.2.0",
+    "gulp-order": "^1.2.0",
+    "gulp-plumber": "1.2.0",
+    "gulp-postcss": "8.0.0",
+    "gulp-print": "^5.0.2",
+    "gulp-rename": "1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "3.0.1",
+    "husky": "3.0.2",
+    "lint-staged": "9.2.1",
+    "minimist": "1.2.0",
+    "postcss-import": "12.0.1",
+    "postcss-nested": "4.1.0",
+    "prettier": "1.17.0",
+    "stylelint": "10.0.1",
+    "stylelint-config-css-modules": "1.4.0",
+    "stylelint-config-prettier": "5.1.0",
+    "stylelint-config-rational-order": "0.1.2",
+    "stylelint-config-standard": "18.3.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.1.0",
+    "stylelint-order": "3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "node ./run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@neusoft/cloud2016/h5-liaoyang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix --ext .js",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.scss": [
+      "stylelint --syntax scss",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;;GAIG;AAIH,QAAoB;EAChB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;EACX,QAAQ,EAAE,MAAM;EAChB,cAAc,EAAE,OAAO;EACvB,WAAW,EAAE,IAAI;EACjB,IAAI,EAAE,YAAY",
+"sources": ["fc.icon.scss"],
+"names": [],
+"file": "fc.icon.css"
+}

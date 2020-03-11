@@ -1,0 +1,71 @@
+/**
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-25 22:32:01
+ * @Description: btn styles for fc
+ */
+button, button:focus, button:active {
+  outline: none; }
+
+.fc-btn {
+  display: block;
+  width: 100%;
+  height: 0.88rem;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  border-radius: 30px;
+  line-height: 0.88rem;
+  color: #FFFFFF;
+  font-size: 0.32rem;
+  text-align: center;
+  letter-spacing: 1px;
+  vertical-align: top;
+  outline: none; }
+  .fc-btn.fc-btn--primary {
+    color: #fff;
+    background-color: #276ACE;
+    background: -webkit-gradient(linear, left top, right top, from(#276ACE), to(#2196f3));
+    background: linear-gradient(90deg, #276ACE, #2196f3); }
+  .fc-btn.fc-btn--default {
+    color: #fff;
+    background-color: #276ACE;
+    background: -webkit-gradient(linear, left top, right top, from(#276ACE), to(#2196f3));
+    background: linear-gradient(90deg, #276ACE, #2196f3); }
+  .fc-btn.fc-btn--error {
+    color: #fff;
+    background-color: #E92758;
+    background: -webkit-gradient(linear, left top, right top, from(#E92758), to(#FF9569));
+    background: linear-gradient(90deg, #E92758, #FF9569); }
+  .fc-btn.fc-btn--warning {
+    color: #fff;
+    background-color: #FFC107;
+    background: -webkit-gradient(linear, left top, right top, from(#FFC107), to(#FFC107));
+    background: linear-gradient(90deg, #FFC107, #FFC107); }
+  .fc-btn.fc-btn--success {
+    color: #fff;
+    background-color: #009688;
+    background: -webkit-gradient(linear, left top, right top, from(#009688), to(#009688));
+    background: linear-gradient(90deg, #009688, #009688); }
+  .fc-btn.fc-btn--disabeld {
+    color: #fff;
+    background-color: #CCCCCC;
+    background: -webkit-gradient(linear, left top, right top, from(#CCCCCC), to(#CCCCCC));
+    background: linear-gradient(90deg, #CCCCCC, #CCCCCC); }
+  .fc-btn[disabled], .fc-btn.fc-btn--disabled {
+    cursor: not-allowed; }
+  .fc-btn:focus {
+    outline: none; }
+
+.fc-btn:active,
+.fc-btn--like:active {
+  opacity: .7; }
+.fc-btn:hover, .fc-btn:active,
+.fc-btn--like:hover,
+.fc-btn--like:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/*# sourceMappingURL=fc.btn.css.map */

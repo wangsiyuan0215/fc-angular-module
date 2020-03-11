@@ -1,0 +1,88 @@
+/**
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-25 22:32:01
+ * @Description: btn styles for fc
+ */
+
+@import 'utils';
+
+$namespace: 'fc' !default;
+
+// basic
+$btn-width: 100%;
+$btn-height: .44rem * $rate2width750;
+$btn-padding: 0;
+$btn-border-radius: 30px;
+
+// font
+$btn-line-height: .44rem * $rate2width750;
+$btn-font-size: .16rem * $rate2width750;
+$btn-letter-spacing: 1px;
+
+
+// types: primary(default) | warning | error | success | disabled
+$btn-types-primary: (start-bg-color: #276ACE, end-bg-color: #2196f3, font-color: #fff);
+$btn-types-default: (start-bg-color: #276ACE, end-bg-color: #2196f3, font-color: #fff);
+$btn-types-error: (start-bg-color: #E92758, end-bg-color: #FF9569, font-color: #fff);
+$btn-types-warning: (start-bg-color: #FFC107, end-bg-color: #FFC107, font-color: #fff);
+$btn-types-success: (start-bg-color: #009688, end-bg-color: #009688, font-color: #fff);
+$btn-types-disabled: (start-bg-color: #CCCCCC, end-bg-color: #CCCCCC, font-color: #fff);
+$btn-types: (
+    primary: $btn-types-primary,
+    default: $btn-types-default,
+    error: $btn-types-error,
+    warning: $btn-types-warning,
+    success: $btn-types-success,
+    disabeld: $btn-types-disabled
+);
+
+button, button:focus, button:active {
+    outline: none;
+}
+
+.#{$namespace}-btn {
+    display: block;
+    width: $btn-width;
+    height: $btn-height;
+    overflow: hidden;
+    padding: $btn-padding;
+    border: none;
+    border-radius: $btn-border-radius;
+    background-color: map-get($btn-types-default, background-color);
+    line-height: $btn-line-height;
+    color: #FFFFFF;
+    font-size: $btn-font-size;
+    text-align: center;
+    letter-spacing: $btn-letter-spacing;
+    vertical-align: top;
+    outline: none;
+
+    @each $type in map-keys($btn-types) {
+        $currentTypeMap: map-get($btn-types, $type);
+
+        &.#{$namespace}-btn--#{$type} {
+            color: map-get($currentTypeMap, font-color);
+            @include linear-gradient(90deg, map-get($currentTypeMap, start-bg-color), map-get($currentTypeMap, end-bg-color));
+        }
+    }
+
+    &[disabled],
+    &.#{$namespace}-btn--disabled {
+        cursor: not-allowed;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.#{$namespace}-btn,
+.#{$namespace}-btn--like {
+    &:active {
+        opacity: .7;
+        @extend :hover;
+    }
+    &:hover {
+        @include tapNoHighLight();
+    }
+}
+

@@ -1,0 +1,9 @@
+/*! fc.min.css v1.3.1 */
+@import 'normalize', 'fc.form', 'fc.btn', 'fc.toast', 'fc.loading', 'fc.modal';
+
+/* for tablet pc and mobile */
+@media screen and (max-width: 992px) {
+    input[type=text] {
+        -webkit-appearance: none;
+    }
+}

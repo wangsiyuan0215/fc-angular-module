@@ -1,0 +1,59 @@
+/**
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-25 22:32:01
+ * @Description: header styles for fc
+ */
+/* header styles */
+$namespace: 'fc';
+
+.#{$namespace}-header {
+    $header_height: .88rem;
+
+    box-sizing: content-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2001;
+    height: $header_height;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    background-color: #FFFFFF;
+    //border-bottom: solid 1px #E3E3E3;
+    box-shadow: 0 5px 10px -3px #E3E3E3;
+
+    .#{$namespace}-header__left {
+        position: absolute;
+        top: 0;
+        top: constant(safe-area-inset-top);
+        top: env(safe-area-inset-top);
+        left: 0;
+        z-index: 2;
+        width: $header_height;
+        height: $header_height;
+        padding-left: .28rem;
+        line-height: $header_height;
+
+        & > img {
+            width: auto;
+            height: .36rem;
+            margin-top: .26rem;
+            vertical-align: top;
+        }
+    }
+    .#{$namespace}-header__title {
+        position: relative;
+        width: 100%;
+        height: $header_height;
+        padding: 0 .88rem;
+        line-height: $header_height;
+        color: #3E3E3E;
+        font-size: .34rem;
+        text-align: center;
+    }
+
+    .#{$namespace}-header__left:active,
+    .#{$namespace}-header__left:hover {
+        opacity: .7;
+    }
+}

@@ -1,0 +1,10 @@
+/*! fc.min.css v1.4.4 */
+@import 'normalize', 'fc.form', 'fc.btn', 'fc.toast', 'fc.loading', 'fc.modal', 'fc.header',
+    'fc.container', 'fc.hinter', 'fc.empty', 'fc.item', 'fc.checkbox', 'fc.icon';
+
+/* for tablet pc and mobile */
+@media screen and (max-width: 992px) {
+    input[type='text'] {
+        -webkit-appearance: none;
+    }
+}

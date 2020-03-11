@@ -1,0 +1,43 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2019-03-22 14:15:26
+ * @Description: container styles for fc
+ */
+
+$namespace: 'fc';
+
+.#{$namespace}-item {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: .3rem;
+    text-decoration: none;
+    background-color: white;
+    border-bottom: solid 1px #e4e5e8;
+
+    .#{$namespace}-item__container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+    .#{$namespace}-item__arrow {
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+
+        & > .icon {
+            width: 1em;
+            height: 1em;
+            overflow: hidden;
+            vertical-align: -0.15em;
+            user-select: none;
+            fill: currentColor;
+            font-size: .28rem;
+        }
+    }
+}

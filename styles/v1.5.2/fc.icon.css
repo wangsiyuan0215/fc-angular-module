@@ -1,0 +1,17 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2020-01-10 09:35:38
+ * @Description: fc.icon
+ */
+.fc-icon {
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  vertical-align: -0.15em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  fill: currentColor; }
+
+/*# sourceMappingURL=fc.icon.css.map */

@@ -1,0 +1,85 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-26 08:58:23
+ * @Description: toast styles for fc
+ */
+
+@import "utils";
+
+$namespace: 'fc' !default;
+
+// $toast-translateY-height: -1.2rem;
+// $toast-box-padding-vertical: .3rem;
+// $toast-content-padding-vertical: .2rem;
+// $toast-content-padding-horizontal: .1rem;
+// $toast-content-line-height: .2rem;
+// $toast-font-size: .14rem;
+// $toast-font-color: #FFFFFF;
+
+$toast-translateY-height: -120px;
+$toast-box-padding-vertical: 30px;
+$toast-content-padding-vertical: 20px;
+$toast-content-padding-horizontal: 10px;
+$toast-content-line-height: 20px;
+$toast-font-size: 14px;
+$toast-font-color: #FFFFFF;
+
+.#{$namespace}-toast {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2002;
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transform: translate3d(0, 100%, 0) scale(.5);
+    -moz-transform: translate3d(0, 100%, 0) scale(.5);
+    -ms-transform: translate3d(0, 100%, 0) scale(.5);
+    -o-transform: translate3d(0, 100%, 0) scale(.5);
+    transform: translate3d(0, 100%, 0) scale(.5);
+    pointer-events: none;
+
+    &.#{$namespace}-toast__success .#{$namespace}-toast--content {
+        background-color: rgba(0, 150, 136, .8);
+    }
+    &.#{$namespace}-toast__error .#{$namespace}-toast--content {
+        background-color: rgba(233, 39, 88, .9);
+    }
+    &.#{$namespace}-toast__info .#{$namespace}-toast--content {
+        background-color: rgba(0, 0, 0, .7);
+    }
+    &.#{$namespace}-toast__active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, $toast-translateY-height, 0) scale(1);
+        -moz-transform: translate3d(0, $toast-translateY-height, 0) scale(1);
+        -ms-transform: translate3d(0, $toast-translateY-height, 0) scale(1);
+        -o-transform: translate3d(0, $toast-translateY-height, 0) scale(1);
+        transform: translate3d(0, $toast-translateY-height, 0) scale(1);
+    }
+}
+
+.#{$namespace}-toast--box {
+    padding: 0 $toast-box-padding-vertical;
+    line-height: 0;
+    text-align: center;
+}
+
+.#{$namespace}-toast--content {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    display: inline-block;
+    padding: $toast-content-padding-horizontal $toast-content-padding-vertical;
+    background-color: rgba(0, 0, 0, .7);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    line-height: $toast-content-line-height;
+    color: $toast-font-color;
+    font-size: $toast-font-size;
+    text-align: center;
+    vertical-align: top;
+}

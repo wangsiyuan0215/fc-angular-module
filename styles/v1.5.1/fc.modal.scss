@@ -1,0 +1,163 @@
+/*
+ * @Author: SiYuan Wang
+ * @Date: 2018-11-26 09:31:43
+ * @Description: modal styles for fc
+ */
+
+/**
+    <div class="fc-modal">
+        <div class="fc-modal--box">
+            <div class="fc-modal--header">
+                ...
+            </div>
+            <div class="fc-modal--body">
+                ...
+            </div>
+            <div class="fc-modal--footer">
+                <div class="fc-modal--footer--btn fc-modal--footer--btn__cancel">取消</div>
+                <div class="fc-modal--footer--btn fc-modal--footer--btn__submit">确定</div>
+            </div>
+        </div>
+        <div class="fc-modal--bg"></div>
+    </div>
+ */
+
+@import 'utils';
+
+$namespace: 'fc' !default;
+
+$modal-body-max-height: 5rem;
+
+$modal-header-font-size: .16rem;
+
+$modal-box-bg-color: #FFFFFF;
+$modal-box-font-color: #333333;
+$modal-box-border-color: #F5F5F5;
+$modal-box-cancel-font-color: #999999;
+$modal-box-yes-font-color: #007AFF;
+
+/* avoid displaying content for fc-modal before fc.min.js is just loaded. */
+fc-modal {
+    display: none !important;
+}
+
+.#{$namespace}-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    height: 100%;
+    overflow-y: auto;
+
+    &.#{$namespace}-modal__active {
+        display: block;
+
+        & .#{$namespace}-modal--box__active {
+            opacity: 1;
+            transform: translate3d(0, 10%, 0);
+        }
+    }
+
+    & .#{$namespace}-modal--box {
+        $header_footer_height: .5rem;
+
+        position: relative;
+        width: 90%;
+        height: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        background-color: $modal-box-bg-color;
+        transition: all .2s ease;
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+
+        & .#{$namespace}-modal--header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            height: $header_footer_height;
+            background-color: $modal-box-bg-color;
+            border-bottom: solid 1px $modal-box-border-color;
+            line-height: $header_footer_height;
+            color: $modal-box-font-color;
+            font-size: $modal-header-font-size;
+            text-align: center;
+        }
+
+        & .#{$namespace}-modal--body {
+            position: relative;
+            height: 100%;
+            padding: $header_footer_height 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+
+            @media screen and (max-height: 560px) {
+                & {
+                    max-height: $modal-body-max-height * .8;
+                }
+            }
+        }
+
+        & .#{$namespace}-modal--footer {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            height: $header_footer_height;
+            border-top: solid 1px $modal-box-border-color;
+            background-color: $modal-box-bg-color;
+            line-height: $header_footer_height;
+            font-size: 0;
+            letter-spacing: -4px;
+            word-spacing: 0;
+
+            & .#{$namespace}-modal--footer--btn {
+                $modal-footer-margin-top: .1rem;
+
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                height: $header_footer_height - ($modal-footer-margin-top * 2);
+                line-height: $header_footer_height - ($modal-footer-margin-top * 2);
+                margin-top: .1rem;
+                color: $modal-box-font-color;
+                font-size: $modal-header-font-size;
+                letter-spacing: 0;
+                text-align: center;
+
+                &:last-child {
+                    border-left: solid 1px $modal-box-border-color;
+                }
+                &:active {
+                    opacity: .7;
+                }
+            }
+
+            & .#{$namespace}-modal--footer--btn__cancel {
+                color: $modal-box-cancel-font-color;
+            }
+            & .#{$namespace}-modal--footer--btn__submit {
+                color: $modal-box-yes-font-color;
+            }
+        }
+    }
+
+    & .#{$namespace}-modal--bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, .6);
+    }
+}
+.#{$namespace}-modal-in-body__show {
+    overflow: hidden;
+}

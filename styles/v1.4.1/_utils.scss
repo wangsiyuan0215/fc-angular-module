@@ -1,0 +1,18 @@
+$namespace: 'fc';
+$rate2width750: 2;
+
+@mixin tapNoHighLight {
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color:rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color:rgba(0, 0, 0, 0);
+    -o-tap-highlight-color:rgba(0, 0, 0, 0);
+    tap-highlight-color:rgba(0, 0, 0, 0);
+}
+
+@mixin linear-gradient($deg , $colorForm, $colorTo){
+    background-color: $colorForm;
+    background: -webkit-linear-gradient($deg,  $colorForm, $colorTo);
+    background: -moz-linear-gradient($deg,  $colorForm, $colorTo);
+    background: -o-linear-gradient($deg,  $colorForm, $colorTo);
+    background: linear-gradient($deg,  $colorForm, $colorTo);
+}
